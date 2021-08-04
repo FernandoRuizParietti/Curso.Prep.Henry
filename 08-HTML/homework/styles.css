@@ -2,7 +2,8 @@ h1{
     color:yellow
 }
 img{
-    width: 400px
+    width: 400px;
+    height: 200px;
 }
 #thirdDiv{
     height: 600px;

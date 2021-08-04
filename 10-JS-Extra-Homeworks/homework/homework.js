@@ -18,6 +18,20 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  
+  //Pasamos la cadena a minusculas(por las dudas)
+  string = string.toLowerCase()
+  //quitamos los espacios en blanco
+  //string = string.replace(/\s/g, "");
+  final = {} //Donde guardamos los resultados
+  for(let char in string){ //Tomamos el indice de cada caracter
+    if(string[char] in final) { //Si ya existe, simplemente aumentamos el contador
+        final[string[char]] = final[string[char]] + 1
+    } else { // Si no existe, lo inicializamos a 1
+        final[string[char]] = 1
+    }
+}
+ return final
 }
 
 
@@ -26,6 +40,22 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+
+  final = [];//donde voy a guardar
+    var letra;
+      for(var i=0; i< s.length; i++){ //Para cada caracter de "s"
+            letra = s.charAt(i);
+                if (Character.isUpperCase(letra)){  
+                      final.push(letra);
+                   }
+                }
+      for (var i=final.length; i<s.length; i++){
+            letra = s.charAt(i);
+          if (Character.isLowerCase(letra)){      
+            final.push(letra);
+         }
+      }
+         return final;
 }
 
 
@@ -35,7 +65,16 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-} 
+    var x = str.length();
+    var cadenaInvertida = "";
+  
+    while (x>=0) {
+      cadenaInvertida = cadenaInvertida + cadena.charAt(x);
+      x--;
+    }
+    return cadenaInvertida;
+  }
+
 
 
 function capicua(numero){
@@ -83,4 +122,3 @@ module.exports = {
    sortArray,
    buscoInterseccion,
 };
-
