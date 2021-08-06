@@ -88,14 +88,22 @@ function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
-  return numero === 10 || numero === 5;
+  if (numero === 10 || numero === 5){
+      return true;
+  }else {
+    return false;
+  }
 }
 
 function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
-  return numero < 50 && numero > 20;
+  if (numero < 50 && numero > 20){
+      return true;
+  } else {
+    return false;
+  }
 }
 
 function esEntero(numero) {
@@ -106,8 +114,13 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
-  return numero % 1 === 0;
+  if (numero %1 ===0){
+    return true;
+      } else {
+    return false;
   }
+}   // otra forma seria hacerlo asi:
+    //return numero % 1 === 0;  
 
 function fizzBuzz(numero) {
   // Si "numero" es divisible entre 3, devuelve "fizz"
@@ -127,21 +140,11 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
-  if(num1 < 0 || num2 < 0 || num3 < 0) {
-    return "Hay negativos";
-  }
-  else if(num1 === 0 || num2 === 0 || num3 === 0) {
-    return "Error";
-  }
-  else if(num1 > 0 && num1 > num2 && num1 > num3) {
-    return "Número 1 es mayor y positivo";
-  }
-  else if(num3 > num1 && num3 > num2) {
-    return num3 + 1;
-  }
-  else {
-    return false;
-  }
+  if(num1 < 0 || num2 < 0 || num3 < 0) return "Hay negativos";
+  else if(num1 === 0 || num2 === 0 || num3 === 0) return "Error";
+  else if(num1 > 0 && num1 > num2 && num1 > num3) return "Número 1 es mayor y positivo";
+  else if(num3 > num1 && num3 > num2) return num3 + 1;
+  else  return false;
 }
 
 function esPrimo(numero) {
@@ -199,7 +202,7 @@ function doWhile(numero) {
     i += 1;
     a += 5;
  } while (i < 8);
- return (a);
+ return a;
 }
 
 

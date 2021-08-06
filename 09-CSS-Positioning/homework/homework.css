@@ -66,6 +66,20 @@ archivo en cualquiera de estas carpetas, estás en el lugar equivocado.
 
 #ejercicioSiete{
     
-    display: flexbox;
-    align-self: auto;
+   /* flex-direction: column;*/
+   /*align-self: auto;*/
+   align-items:center;
+   /*justify-content:center;*/   
+}
+#elementoDos{
+    align-self: flex-start;
+}
+#elementoCuatro{
+    align-self:flex-end;
+    justify-content:;
+    flex-direction: ;
+    align-content: ;
+    align-items:;
+    flex-wrap:;
+    
 }
