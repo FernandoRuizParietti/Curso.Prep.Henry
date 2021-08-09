@@ -8,14 +8,16 @@ function crearUsuario() {
   // {{nombre}} debe ser el nombre definido en cada instancia
   // Devuelve la clase
   // Tu código:
-  function Usuario(opciones){
-  this.usuario=opciones.usuario;
-  this.nombre= opciones.nombre;
-  this.email=opciones.email;
-  this.password=opciones.password;
-  }
+  class Usuario {
+    constructor (opciones) {
+                this.usuario=opciones.usuario;
+                this.nombre= opciones.nombre;
+                this.email=opciones.email;
+                this.password=opciones.password;
+                }
+              }
   Usuario.prototype.saludar = function() {
-    return 'Hola, mi nombre es' + this.nombre;
+    return `Hola, mi nombre es ${this.nombre}`;
   };
   return Usuario;
 }
@@ -37,9 +39,9 @@ function agregarStringInvertida() {
   // Ej: 'menem'.reverse() => menem
   // 'toni'.reverse() => 'inot'
   // Pista: Necesitarás usar "this" dentro de "reverse"
-  String.prototype.reverse = function() {
+  String.prototype.reverse = function() { // String va en mayuscula, por que es una class contructora, por eso se pone de color Verde igual que la palabra constructor
     var stringInvertida = '';
-    for(var i = this.length - 1; i>=0; i--) {
+    for(var i = this.length - 1; i>=0; i--) { // barro la string de atras para adelente 
       stringInvertida = stringInvertida + this.charAt(i);
     }
     return stringInvertida;
@@ -64,7 +66,7 @@ function agregarStringInvertida() {
       this.apellido= apellido,
       this.edad= edad,
       this.domicilio= domicilio,
-      this.detalle = function(){
+      this.detalle = function(){ // Agrego un metodo (que es una funcion), dentro del costructor de clase Persona
           return{
             Nombre: this.nombre,
             Apellido: this.apellido,
@@ -88,8 +90,8 @@ function agregarMetodo() {
   //La función agrega un método "datos" a la clase Persona que toma el nombre y la edad de la persona y devuelve: 
   //Ej: "Juan, 22 años"
   Persona.prototype.datos = function(){
-    return this.nombre + "," + this.edad + "años";
-  }
+    return this.nombre + ", " + this.edad + " años";// la coma, va con un espacio al lado, para separar la coma del numero de la edad.
+  }                                                 // años va con un espacio adelante, para separar el numero de la palabra años.  
 }
   
 
