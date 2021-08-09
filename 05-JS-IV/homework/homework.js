@@ -24,7 +24,7 @@ function agregarPropiedad(objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-  objeto[property] = null;
+  objeto[property] = null; // Accedo a la propiedad del objeto
   return objeto;
 }
 
@@ -33,18 +33,16 @@ function invocarMetodo(objeto, metodo) {
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
-  objeto[metodo]();
+  objeto[metodo](); // Como desconozco el nombre del metodo, accedo al mismo con [metodo] y () vacios, para llamar a la funcion.
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-  //var objetoMisterioso = {
-   //  numeroMisterioso: 4,
-  //}
+  
 var resultado;
-resultado= objetoMisterioso.numeroMisterioso*5;
+resultado= objetoMisterioso.numeroMisterioso * 5; // Aca si conozco el nomre del metodo, por eso lo invoco con un punto.
 return resultado;
 }
 
@@ -53,7 +51,7 @@ function eliminarPropiedad(objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
-  delete objeto[unaPropiedad];
+  delete objeto[unaPropiedad]; // Uso [], por que me pasan el nombre de la propiedad, mediante el parametro unaPropiedad. 
   return objeto;
 }
 
@@ -95,15 +93,15 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // // Tu código:
-  //if (usuario.password===pasword){
-    //  return true;
-  //} else return false;
-// EJERCICIO NO ENTENDIDO
-return usuario['password'] === password;
+
+  if (usuario.password === password)  return true;
+  return false
+// Otra manera mas abreviada, sería:
+//return usuario['password'] === password;
 }
 
 function actualizarPassword(usuario, nuevaPassword) {
-  // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
+  // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevaPassword"
   // Devuelve el objeto
   // Tu código:
   usuario.password= nuevaPassword;
@@ -115,7 +113,7 @@ function agregarAmigo(usuario, nuevoAmigo) {
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // // Tu código:
-  usuario.amigos.push(nuevoAmigo);
+  usuario.amigos.push(nuevoAmigo); //Apunto a la propiedad amigos del arreglo y como es un array, uso .push para insertar un nuevoAmigo al final.
   return usuario;
 }
 
@@ -126,7 +124,7 @@ function pasarUsuarioAPremium(usuarios) {
   // Devuelve el array de usuarios
   // Tu código:
   for(var i=0 ; i<usuarios.length; i++){
-    usuarios[i].esPremium = true;
+    usuarios[i].esPremium = true; // Es un array de objetos
   } return usuarios;
 }
 
@@ -138,15 +136,10 @@ function sumarLikesDeUsuario(usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
-  //var usuario = {
-   // posts: [{
-  //    likes: 4
-  // }]
-  //}
-  //EJERCICIO NO ENTENDIDO
+  
   var suma=0;
   for(var i=0 ; i< usuario.posts.length; i++){
-      suma= suma + usuaio.posts[i].likes;
+      suma= suma + usuario.posts[i].likes; // es un objeto que en una de sus propiedades, contiene un array
   } 
   return suma;
 }
@@ -162,7 +155,7 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
   producto.calcularPrecioDescuento = function () {
-    return this.precio -  (this.precio  * this.porcentajeDescuento);
+    return this.precio -  (this.precio  * this.porcentajeDeDescuento);// this hace referencia al objeto producto
   }
   return producto;
 
