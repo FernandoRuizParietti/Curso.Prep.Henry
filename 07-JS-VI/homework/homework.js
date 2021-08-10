@@ -4,7 +4,7 @@ function mayuscula(nombre) {
   //La función recibe un nombre y debe devolver el mismo que recibe pero con su primer letra en mayúscula
   //ej: Recibe "mario" ----> Devuelve "Mario"
   //Tu código:
-  return nombre[0].toUpperCase() + nombre.slice(1);
+  return nombre[0].toUpperCase() + nombre.slice(1);// el metodo .slice, recorre el string, desde el indice que esta entre parentecis en adelante, si agrego un segundo parametro, corta el string en ese indice.
 }
 
 function invocarCallback(cb) {
@@ -26,16 +26,13 @@ function sumarArray(numeros, cb) {
   // No es necesario devolver nada
   //Tu código:
   var suma;
-  suma = numeros.reduce(function(acc, curr){
+  suma = numeros.reduce(function(acc, curr){// el metodo .reduce recibe un acumulador: acc y cada uno de los elementos del arreglo: curr (o valor actual)
     return acc + curr;
-  },0);
+  },0);// el metodo .reduce, se inicia en 0.
   cb(suma);
 }
 
-//var sumaTotal = numeros.reduce(function(acc, curr) {
-  //return acc + curr;
-//},0);
-//cb(sumaTotal);
+
 
 function forEach(array, cb) {
   // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
@@ -51,8 +48,8 @@ function map(array, cb) {
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
-  var nuevoarray = array.map(function(el) {
-    return cb(el);
+  var nuevoarray = array.map(function(elemento) {
+    return cb(elemento);
   });
   return nuevoarray;
   }

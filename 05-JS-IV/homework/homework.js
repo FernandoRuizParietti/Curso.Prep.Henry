@@ -139,7 +139,7 @@ function sumarLikesDeUsuario(usuario) {
   
   var suma=0;
   for(var i=0 ; i< usuario.posts.length; i++){
-      suma= suma + usuario.posts[i].likes; // es un objeto que en una de sus propiedades, contiene un array
+      suma= suma + usuario.posts[i].likes; // es un objeto que en una de sus propiedades, contiene un array llamado likes
   } 
   return suma;
 }
@@ -150,7 +150,7 @@ function agregarMetodoCalculoDescuento(producto) {
   // El método resta el descuento del precio y devuelve el precio con descuento
   // Devuelve el objeto "producto" al final de la función
   // Ejemplo:
-  // producto.precio -> 20
+  // producto.precio -> 20  
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
