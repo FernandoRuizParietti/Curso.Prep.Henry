@@ -17,8 +17,8 @@ function deObjetoAmatriz(objeto) {
   }
   return matriz;
 
-  // otro metodo mas directo es:
-  // return Object.entries(objeto);
+  // otro metodo mas directo es: funca de maravilla.....
+  //return Object.entries(objeto);
 }
 
 
@@ -45,9 +45,9 @@ function numberOfCharacters(string) {
   //var final={};
   // for (var i=0; i<strinng.length; i++){
   //   if (Object.keys(final).includes(sting[i])){
-  //        final[string[i]]= final[string[i]] + 1;
+  //        final[string[i]]= final[string[i]] + 1; //Si ya existe, simplemente aumentamos el contador
   //   } else{
-  //     final[string[i]] = 1;
+  //     final[string[i]] = 1; // Si no existe, lo inicializamos a 1
   //   }
   // }
   // return final
@@ -63,13 +63,13 @@ function capToFront(s) {
   var minus = ""; // creo un string para las minusculas.
   var mayus = ""; // creo un string para las mayusculas.
   for (let i = 0; i < s.length; i++) {
-    if(s[i]=== s[i].toUpperCase()){ // comparo cada caracter con su version en mayusculas.
-          mayus += s[i]; //concateno cada letra Mayuscula en mayus
+    if (s[i] === s[i].toUpperCase()) { // comparo cada caracter con su version en Mayusculas.
+      mayus += s[i]; //concateno cada letra Mayuscula en mayus
     } else {
-      minus += s[i]; // concateno cada munuscula en minus.
+      minus += s[i]; // concateno cada letra Minuscula en minus.  
     }
   }
-  return (mayus + minus) //concateno los dos str en uno solo.
+  return (mayus + minus) //concateno los dos strings en uno solo.
 }
 
 
@@ -79,11 +79,11 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-  
-  var fraseEspejo = str.split(' ').map(function(palabra) { // split, separa la frase usando el espacio, en palabras solas ["The", "Henry", "Challenge", "is", "close!"]
-    return palabra.split('').reverse().join('') 
+
+  var fraseEspejo = str.split(' ').map(function (palabra) { // split, separa la frase usando el espacio (' '), en palabras solas ["The", "Henry", "Challenge", "is", "close!"]
+    return palabra.split('').reverse().join('')
   }).join(' '); // hace doble join, para volver a juntar toda la frase.
-    
+
   return fraseEspejo;
 }
 
@@ -95,11 +95,11 @@ function capicua(numero) {
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
 
-  var entero= numero.toString(); //paso el nuemro a string, para despues poder aplicar el metodo .split
+  var entero = numero.toString(); //paso el nuemro a string, para despues poder aplicar el metodo .split
   var newEntero;
 
-  newEntero= entero.split('').reverse().join('');// lo separpo, lo giro, y lo vuelvo a juntar
-  if(entero === newEntero){
+  newEntero = entero.split('').reverse().join(''); // lo separpo, lo giro, y lo vuelvo a juntar
+  if (entero === newEntero) {
     return 'Es capicua';
   } else {
     return 'No es capicua';
@@ -111,11 +111,20 @@ function deleteAbc(cadena) {
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
-  cadena = cadena.replace('a',''); // reemplazo cada 'a' por nada '', no por un espacio.
-  cadena = cadena.replace('b',''); // reemplazo cada 'b' por nada '', no por un espacio.
-  cadena = cadena.replace('c',''); // reemplazo cada 'c' por nada '', no por un espacio.
+  cadena = cadena.replace('a', ''); // reemplazo cada 'a' por nada '', no por un espacio.
+  cadena = cadena.replace('b', ''); // reemplazo cada 'b' por nada '', no por un espacio.
+  cadena = cadena.replace('c', ''); // reemplazo cada 'c' por nada '', no por un espacio.
 
   return cadena;
+
+  //var array= cadena.split("");
+  //for(let i=0; i< array.length; i++){
+        //if(array[i]=== 'a' || array[i]=== 'b' || array[i]==='c'){
+         // array.slice(i, 1);
+         // i--;
+    //    }
+  //}
+  //return array.join("");
 }
 
 
@@ -124,26 +133,25 @@ function sortArray(arr) {
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
 
-  var newArray=arr.sort(function(elementoActual, elementoSiguiente){
-    return elementoActual.length - elementoSiguiente.length// comparo la longitud de cada elemento
+  var newArray = arr.sort(function (elementoActual, elementoSiguiente) {
+    return elementoActual.length - elementoSiguiente.length // comparo la longitud de cada elemento
   })
   return newArray;
 
-  // otra forma, con for: (Ojo no funca)
+ // otra forma, con for: 
 
-  //var newArray = [];
-  //for (var i=0; i<arr.length; i++){
-   //  for( var j=1; j<arr.length-1; j++){
-    //   if (arr[i].length< arr[j].length){
-    //    var aux= arr[i]; 
-    //    arr[i]= arr[j];
-    //    arr[j]= aux;
-    //   } else {
-    //    newArray.push(arr[j]);
-    //   }
-    //       }
-  //}
-  //return newArray;
+ 
+  // for (var i=0; i<arr.length; i++){
+  //  for( var j=i+1; j<arr.length-1; j++){
+  //   if (arr[i].length > arr[j].length){
+  //    var aux= arr[i]; 
+  //    arr[i]= arr[j];
+  //    arr[j]= aux;
+  //       }  
+  //     }
+  //  }
+
+  // return arr;
 }
 
 
@@ -153,19 +161,19 @@ function buscoInterseccion(arreglo1, arreglo2) {
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
-  var inter=[];
-  for(var i=0; i<arreglo1.length; i++){// hago dos for anidados, y asi comparo cada item de los arreglos.
-    for( var j=0; j<arreglo2.length; j++){
-        if(arreglo1[i]=== arreglo2[j]){
-          inter.push(arreglo1[i]);
-        }
-    }
+  var inter = [];
+  for (var i = 0; i < arreglo1.length; i++) { // hago dos for anidados, y asi comparo cada item de los arreglos.
+        for (var j = 0; j < arreglo2.length; j++) {
+              if (arreglo1[i] === arreglo2[j]) {
+              inter.push(arreglo1[i]); 
+            }
+          }
   }
   return inter;
 }
 
 
- 
+
 // No modificar nada debajo de esta línea
 // --------------------------------
 

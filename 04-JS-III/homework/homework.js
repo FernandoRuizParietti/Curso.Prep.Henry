@@ -222,7 +222,7 @@ function breakStatement(numero) {
   var array = [];
   var suma = numero;
   for(var i =0 ; i<10 ; i++){ 
-      suma= suma+2;  // suma=suma+=2   <=== Es lo mismo.
+      suma= suma+2;  // suma+=2   <=== Es lo mismo.
       if(suma===i) break // el break interrumpe el ciclo for.
       else{
         array.push(suma);

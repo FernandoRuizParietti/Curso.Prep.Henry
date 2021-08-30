@@ -4,7 +4,7 @@ function mayuscula(nombre) {
   //La función recibe un nombre y debe devolver el mismo que recibe pero con su primer letra en mayúscula
   //ej: Recibe "mario" ----> Devuelve "Mario"
   //Tu código:
-  return nombre[0].toUpperCase() + nombre.slice(1);// el metodo .slice, recorre el string, desde el indice que esta entre parentecis en adelante, si agrego un segundo parametro, corta el string en ese indice.
+  return nombre[0].toUpperCase() + nombre.slice(1);// el metodo .slice, recorre el string, desde el indice que esta entre parentecis en adelante, si agrego un segundo parametro, corta el string en ese segundo indice.
 }
 
 function invocarCallback(cb) {
@@ -41,6 +41,10 @@ function forEach(array, cb) {
  for (var i=0 ; i< array.length ; i++){
       cb( array[i]);
  }
+//array.forEach(function(elemento, indice){
+  //cb(array);
+//})
+
 }
 
 function map(array, cb) {
